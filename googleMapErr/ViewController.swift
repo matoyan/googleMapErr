@@ -9,17 +9,19 @@ import UIKit
 import GoogleMaps
 
 class ViewController: UIViewController {
+    
+    var mapView:GMSMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        view.backgroundColor = UIColor.red
         
-        var lat = 36.287633710326844
-        var lon = 137.64343817584012
-        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: 15)
+        let lat:Double = 36.3420
+        let lon:Double = 137.6476
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lon, zoom: 10)
 
-        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+        mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
 
         self.view.addSubview(mapView)
         
